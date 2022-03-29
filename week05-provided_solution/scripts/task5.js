@@ -12,16 +12,16 @@ let dayOfWeek;
 dayOfWeek = today.getDay();
 
 // Step 4: Declare a variable to hold a message that will be displayed
-let message;
+let message1;
 
 // Step 5: Using an if statement, if the day of the week is a weekday (i.e. Monday - Friday), set the message variable to the string 'Hang in there!'
 if (dayOfWeek >= 1 && dayOfWeek <= 5) {
-    message1 = 'Hang in there';
+    message1 = 'Hang in there!';
 }
 
 // Step 6: Using an else statement, set the message variable to 'Woohoo!  It is the weekend!'
 if (dayOfWeek >= 1 && dayOfWeek <= 5) {
-    message1 = 'Hang in there';
+    message1 = 'Hang in there!';
 } else {
     message1 = 'Woohoo!  It is the weekend!';
 }
@@ -59,6 +59,7 @@ switch (dayOfWeek) {
         break;
 }
 
+
 /* OUTPUT */
 
 // Step 1: Assign the value of the first message variable to the HTML element with an ID of message1
@@ -66,7 +67,6 @@ document.querySelector('#message1').textContent = message1;
 
 // Step 2: Assign the value of the second message variable to the HTML element with an ID of message2
 document.querySelector('#message2').textContent = message2;
-
 
 
 /* FETCH */
@@ -82,6 +82,7 @@ let templeList = [];
 // - Creates an HTML <img> element and add the temple's imageUrl property to the src attribute and the temple's templeName property to the alt attribute
 // - Appends the <h3> element, the two <h4> elements, and the <img> element to the <article> element as children
 // - Appends the <article> element to the HTML element with an ID of temples
+
 const output = (temples) => {
     temples.forEach(
         temple => {
@@ -109,13 +110,26 @@ const output = (temples) => {
         }
     );
 }
+
 // Step 3: Using the built-in fetch method, call this absolute URL: 'https://byui-cse.github.io/cse121b-course/week05/temples.json'
+// fetch('https://byui-cse.github.io/cse121b-course/week05/temples.json');
 
 // Step 4: Add a .then() method to turn the returned string into a JavaScript object ( hint: .json() )
+// fetch('https://byui-cse.github.io/cse121b-course/week05/temples.json')
+//    .then(result = result.json())
 
 // Step 5: Add another .then() method with a variable name to hold the temples and an empty arrow function
+// fetch('https://byui-cse.github.io/cse121b-course/week05/temples.json')
+//    .then(response => response.json())
+//    .then(temples => {
+//    });
 
 // Step 6: Inside of second .then() method, assign the list of temples (as a JSON object) to the temples variable
+// fetch('https://byui-cse.github.io/cse121b-course/week05/temples.json')
+//    .then(response => response.json())
+//    .then(temples => {
+//        templeList = temples;
+//    });
 
 // Step 7: Finally, call the output function and pass it the list of temples
 fetch('https://byui-cse.github.io/cse121b-course/week05/temples.json')
@@ -127,7 +141,7 @@ fetch('https://byui-cse.github.io/cse121b-course/week05/temples.json')
 
 // Step 8: Declare a function named reset that clears all of the <article> elements from the HTML element with an ID of temples
 const reset = () => {
-    document.querySelector('#temples').innerHTML = "";
+    document.querySelector('#temples').innerHTML = '';
 }
 
 // Step 9: Declare a function named sortBy that does the following:
@@ -169,6 +183,7 @@ const sortBy = () => {
             break;
     }
 }
+
 // Step 10: Add a change event listener to the HTML element with an ID of sortBy that calls the sortBy function
 document.querySelector('#sortBy').addEventListener('change', sortBy);
 
@@ -177,3 +192,4 @@ document.querySelector('#sortBy').addEventListener('change', sortBy);
 
 // Consider adding a "Filter by" feature that allows users to filter the list of temples
 // This will require changes to both the HTML and the JavaScript files
+
